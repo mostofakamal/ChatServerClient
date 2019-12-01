@@ -5,4 +5,12 @@ export class Message {
     date: Date;
   }
 
+  export class MessageHistory{
+    playerId: number;
+    playerName: string;
+    groupId: number;
+    message: string;
+    sentOn: Date;
+  }
+
   

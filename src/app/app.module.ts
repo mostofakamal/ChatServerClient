@@ -16,6 +16,7 @@ import { AlertService } from 'src/services/alert.service';
 import { ErrorInterceptor } from './helpers/error.interceptor';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { GroupService } from 'src/services/group.service';
+import { MessageService } from 'src/services/message.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,7 @@ import { GroupService } from 'src/services/group.service';
   exports: [
      AlertComponent
   ],
-  providers: [ChatService,AuthenticationService,UserService,AlertService,GroupService,
+  providers: [ChatService,AuthenticationService,UserService,AlertService,GroupService,MessageService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],

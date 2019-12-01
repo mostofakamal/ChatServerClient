@@ -18,7 +18,6 @@ export class UserService {
   register(user: User): Observable<any> {
     //TODO:
     https://stackblitz.com/edit/angular-8-registration-login-example?file=app%2Fregister%2Fregister.component.ts
-     alert("Registering user..");
       return this.http.post( environment.apiUrl+`api/Accounts`, user);
   }
 

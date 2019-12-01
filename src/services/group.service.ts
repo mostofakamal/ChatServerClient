@@ -16,5 +16,17 @@ export class GroupService {
       return this.http.get<any>(environment.apiUrl+`api/Groups`);
     }
 
+    public joinGroup(groupdId) {
+       return this.http.post<void>(environment.apiUrl+`api/Groups/groups/`+groupdId+`/player`,{});
+    }
+
+    public leaveGroup(groupdId) {
+      return this.http.delete<void>(environment.apiUrl+`api/Groups/groups/`+groupdId+`/player`,{});
+   }
+
+   public createGrouop(name){
+    return this.http.post<void>(environment.apiUrl+`api/Groups`,{name: name});
+   }
+
 
 }

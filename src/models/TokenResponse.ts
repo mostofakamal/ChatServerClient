@@ -28,7 +28,7 @@ export class User{
 
 export class Group{
 
-        groupId: Number;
+        groupId: number;
         name: string;
         isMember : boolean
 }

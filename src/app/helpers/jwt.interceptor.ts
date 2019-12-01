@@ -14,14 +14,11 @@ export class JwtInterceptor implements HttpInterceptor {
         if (tokenResponse && tokenResponse.accessToken) {
             request = request.clone({
                 setHeaders: { 
-                    Authorization: `Bearer ${tokenResponse.accessToken}`
+                    Authorization: `Bearer ${tokenResponse.accessToken.token}`
                 }
             });
         }
-        else{
-           console.log("token is null: "+ JSON.stringify(localStorage.getItem("currentUser")));
-
-        }
+       
 
         return next.handle(request);
     }
