@@ -2,23 +2,34 @@
       <div class="row">
         
         <div class="col-md-6">
-          <h5>Groups</h5>
+            <div class="card">
+                <div class="card-header">Create New Group</div>
+                <div class="card-body">
+                    <form class="form-group" #createGroup = "ngForm" (ngSubmit) = "onClickSubmit(createGroup.value)" >
+                        <input type = "text" class="form-control" name = "group" placeholder = "Group Name" ngModel>
+                        <br/>
+                        <input type = "submit" class="btn btn-primary" value = "Create">
+                      </form>
+                </div>
+              </div>
+          <h6>Groups (Click on the Joined group to chat)</h6>
           <ul class="list-group" *ngFor="let group of groups">
             <li class="list-group-item list-group-item-action">
               <div class="btn-group">
                   <label class="alert alert-primary" *ngIf="group.isMember"> Joined</label>
                   <button class="btn btn-success" *ngIf="!group.isMember" (click)="joinGroup(group)">Join</button>
-                  <button class="list-group-item" (click)="selectGroup(group)">{{group.name}}</button>
+                  &nbsp;<button class="list-group-item" (click)="selectGroup(group)">{{group.name}}</button>
               </div>
              
               </li>
           </ul>
+          
+          
+         
         </div>
         <div class="col-md-6">
-            <div class="form-group">
-                <button class="btn btn-primary pull-right" (click)="logout()">Logout</button>
-              </div>
-          <div class="card" *ngIf="selectedGroup" style="width: 18rem;">
+            <button class="btn btn-primary pull-right" (click)="logout()">Logout</button>
+          <div class="card" *ngIf="selectedGroup">
             <div class="card-body">
               <h5 class="card-title">Send Message</h5>
               <h6 class="card-subtitle mb-2 text-muted">Group Name: {{selectedGroup.name}}</h6>
@@ -45,18 +56,6 @@
           </div>
         </div>
 
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-header">Create New Group</div>
-                <div class="card-body">
-                    <form class="form-group" #createGroup = "ngForm" (ngSubmit) = "onClickSubmit(createGroup.value)" >
-                        <input type = "text" class="form-control" name = "group" placeholder = "Group Name" ngModel>
-                        <br/>
-                        <input type = "submit" class="btn btn-primary" value = "Create">
-                      </form>
-                </div>
-              </div>
-        </div>
        
       </div>  
      

@@ -63,11 +63,11 @@ export class DashboardComponent implements OnInit {
     if(group.isMember)
     {
       this.selectedGroup = group;
+      this.chatService.connectToGroup(this.selectedGroup.groupId);
+      this.messageService.getMessageHistory(this.selectedGroup.groupId).subscribe((data: any[])=>{
+        this.messageHistory = data
+      });
     }
-    this.chatService.connectToGroup(this.selectedGroup.groupId);
-     this.messageService.getMessageHistory(this.selectedGroup.groupId).subscribe((data: any[])=>{
-       this.messageHistory = data
-     });
   }
   joinGroup(group: Group){
        this.groupService.joinGroup(group.groupId).subscribe(()=>{
