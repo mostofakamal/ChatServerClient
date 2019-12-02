@@ -1,11 +1,11 @@
 import { Component, OnInit, NgZone } from '@angular/core';
-import { Message, MessageHistory } from '../../models/Message';
-import { ChatService } from '../../services/chat.service';
 import { Router } from '@angular/router';
-import { GroupService } from '../../services/group.service';
-import { Group } from '../../models/TokenResponse';
-import { AuthenticationService } from '../../services/authentication.service';
 import { MessageService } from 'src/services/message.service';
+import { Message, MessageHistory } from 'src/models/Message';
+import { Group } from 'src/models/TokenResponse';
+import { ChatService } from 'src/services/chat.service';
+import { GroupService } from 'src/services/group.service';
+import { AuthenticationService } from 'src/services/authentication.service';
 
 @Component({
   selector: 'app-dashboard',

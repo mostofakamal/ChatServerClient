@@ -1,8 +1,8 @@
 import { Component, NgZone,OnInit } from '@angular/core';
-import { Message } from '../models/Message';
 import {} from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/services/authentication.service';
+import { Message } from 'src/models/Message';
 
 @Component({
   selector: 'app-root',
