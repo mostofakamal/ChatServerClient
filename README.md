@@ -1,12 +1,28 @@
 
-ChatServerClient 
+# ChatServerClient 
 
-[![Build status](https://dev.azure.com/mostofacefalo/Test/_apis/build/status/ChatServer%20Client%20-CI)](https://dev.azure.com/mostofacefalo/Test/_build/latest?definitionId=2)
- 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+A Group chatting website
 
-## Development server
+[![Build Status](https://dev.azure.com/mostofacefalo/Test/_apis/build/status/ChatClient-CI?branchName=master)](https://dev.azure.com/mostofacefalo/Test/_build/latest?definitionId=3&branchName=master)
 
-Run `ng serve --port 4400` for a dev server. Navigate to `http://localhost:4400/`. The app will automatically reload if you change any of the source files.
+[Hosted on Azure] (https://chatclient-prod.azurewebsites.net)
+
+## Technical Details:
+
+> Angular CLI: 8.2.2
+> Node: 10.16.3
+> SignalR client lib for Angular
+
+### Features:
+* Login and Register
+* Create/View Group
+* Join/Leave a Group 
+* Enter a group for chatting
+* View Group Full Message history
+
+### Implementation description :
+The angular project is basically the client app for the chat server. It calls different apis on Chatserver e.g call the login endpoint to get the token and then use it for further communications with the server. It opens signalR Hub connection and send message to connected groups. 
+
+The CI-CD pipeline for this project is integrate with this repo. Any changes in master branch will trigger a build on Azure dev ops and then once the build is successful it will create a release and then deploy it to prod stage. 
 
 
