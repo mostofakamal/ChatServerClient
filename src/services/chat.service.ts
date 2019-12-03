@@ -1,7 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { HubConnection, HubConnectionBuilder } from '@aspnet/signalr';
-import { Message, MessageHistory } from '../models/message';
 import { environment } from 'src/environments/environment';
+import { MessageHistory, Message } from 'src/models/Message';
 import { AuthenticationService } from './authentication.service';
 
 @Injectable()
