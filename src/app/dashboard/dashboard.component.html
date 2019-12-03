@@ -47,7 +47,7 @@
                 <div class="input_msg_write btn-group">
                   <input type="text" class="form-control write_msg" [value]="txtMessage"
                   (input)="txtMessage=$event.target.value" (keydown.enter)="sendMessage()" placeholder="Type a message" />
-                  <button class="msg_send_btn" type="button"  (click)="sendMessage()"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+                  <button  class="msg_send_btn btn-primary" type="button"  (click)="sendMessage()"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
                 </div>
                 
               </div>
